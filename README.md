@@ -6,3 +6,16 @@ thoughts -
 3. include personal reviews (from me specifically) 
 4. chipublib api - is this something i can do? 
 5. star ratings
+
+
+front end:
+html/css
+javascript
+grid/flexbox?
+
+back end:
+node.js
+express
+heroku
+sequelize
+passportjs
