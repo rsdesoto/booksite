@@ -6,8 +6,7 @@ const port = 3000;
 
 app.use("/view", express.static(path.join(__dirname, "/app/view")));
 
-app.get("/", function(req, res) {
-  res.sendFile(path.join(__dirname, "/app/view/html/index.html"));
-});
+require("./app/controller/apiroutes")(app);
+require("./app/controller/htmlroutes")(app);
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));
