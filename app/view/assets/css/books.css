@@ -1,3 +1,5 @@
+/* general formatting and page setup */
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   height: 100vh;
@@ -5,6 +7,33 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+button {
+  height: 150%;
+}
+
+container {
+  padding-top: 0.5rem;
+  flex: auto;
+  position: relative;
+  overflow-y: auto;
+  display: flex;
+  justify-content: center;
+}
+
+/* h2 is for the card titles */
+
+h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* h3 is for authors */
+h3 {
+  font-size: 18px;
+}
+
+/* Header information and set-up */
 
 header {
   flex: none;
@@ -42,10 +71,6 @@ header {
   align-items: center;
 }
 
-button {
-  height: 150%;
-}
-
 #header-button {
   height: 40px;
   margin: 0 10px;
@@ -71,9 +96,39 @@ button {
   align-items: center;
 }
 
-container {
-  padding-top: 1rem;
-  flex: auto;
-  position: relative;
-  overflow-y: auto;
+/* Main content information */
+
+.main-content {
+  width: 80%;
+}
+
+.bookcard {
+  /* display: flex; */
+  width: 100%;
+  border: 1px grey solid;
+  border-radius: 5px;
+  margin: 20px 5px;
+}
+
+.bookcard-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem;
+  border-bottom: 1px grey solid;
+}
+
+.bookcard-text {
+  padding: 0.5rem;
+  border-bottom: 1px grey solid;
+}
+
+.bookcard-footer {
+  font-size: 13px;
+
+  display: flex;
+  width: 100%;
+
+  justify-content: space-between;
+  padding: 0.5rem;
+  box-sizing: border-box;
 }

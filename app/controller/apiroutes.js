@@ -16,6 +16,22 @@ module.exports = function(app) {
       res.json(data);
     });
   });
+
+  app.get("/api/ratings", function(req, res) {
+    connection.query("SELECT * FROM RATINGS", function(err, data) {
+      if (err) throw err;
+      console.log(data);
+      res.json(data);
+    });
+  });
+
+  app.get("/api/progress", function(req, res) {
+    connection.query("SELECT * FROM PROGRESS", function(err, data) {
+      if (err) throw err;
+      console.log(data);
+      res.json(data);
+    });
+  });
 };
 
 // for api routes - for new book need
