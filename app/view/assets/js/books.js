@@ -12,10 +12,18 @@ $(document).ready(() => {
   $.get("/api/books", data => {
     console.log(data);
     data.map(item => {
-      createNewCard(item);
+      // createNewCard(item);
+      console.log(item);
     });
   });
 });
+
+const testItem = {
+  title: "Test Title",
+  author: "Test Author",
+  review:
+    "I liked this book. Text goes here. Notes go here. I like lots of things. Hello world."
+};
 
 /**
  *
@@ -24,6 +32,34 @@ $(document).ready(() => {
 function createNewCard(item) {
   let newBookCard = $("<div>");
   newBookCard.addClass("bookcard");
+
+  // component creation ///////////////////////////////////////////////
+  // create header
+  let newBookHeader = $("<div>");
+  newBookHeader.addClass("bookcard-header");
+
+  // create title
+  let newBookTitle = $("<div>");
+  newBookTitle.addClass("bookcard-title");
+
+  // add title
+  newBookTitle.html(`<h2>${item.title}</h2>`);
+
+  // create author info
+  let newBookInfo = $("<div>");
+  newBookInfo.addClass("bookcard-info");
+
+  // add author
+  newBookInfo.html(`<h3>${item.author}</h3>`);
+
+  // card creation ///////////////////////////////////////////////
+  newBookHeader.append(newBookTitle);
+  newBookHeader.append(newBookInfo);
+  newBookCard.append(newBookHeader);
+
+  // append card to the main content section
+  $(".main-content").append(newBookCard);
+
   // return (
   //     <div class="bookcard">
   //       <div class="bookcard-header">
@@ -53,3 +89,5 @@ function createNewCard(item) {
   //     </div>
   //   );
 }
+
+createNewCard(testItem);
