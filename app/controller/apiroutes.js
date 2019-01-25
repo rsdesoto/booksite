@@ -44,6 +44,3 @@ module.exports = function(app) {
     );
   });
 };
-
-// for api routes - for new book need
-// to do both new book AND new author query
