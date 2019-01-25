@@ -11,10 +11,13 @@ VALUES
 ("annihilation",2)
 ;
 
-INSERT INTO progress(pages,pagesRead,bookId)
+-- status options: 
+-- to read / reading / finished / dnf
+
+INSERT INTO progress(pages,bookstatus,pagesRead,bookId)
 VALUES
-(500,230,1),
-(150,121,2)
+(500,"finished",230,1),
+(150,"finished",121,2)
 ;
 
 INSERT INTO ratings(rating,review,bookId)

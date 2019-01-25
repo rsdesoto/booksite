@@ -15,6 +15,7 @@ PRIMARY KEY (id)
 create table progress(
 id INTEGER(11) NOT NULL AUTO_INCREMENT,
 pages INTEGER(11),
+bookstatus VARCHAR(50) NOT NULL DEFAULT "to read",
 pagesRead INTEGER(11),
 dateStarted DATETIME DEFAULT CURRENT_TIMESTAMP,
 dateFinished DATETIME,

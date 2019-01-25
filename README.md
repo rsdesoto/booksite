@@ -11,7 +11,7 @@ thoughts -
 front end:
 html/css
 javascript
-grid/flexbox?
+flexbox?
 
 back end:
 node.js
@@ -21,3 +21,22 @@ sequelize?
 passportjs
 
 mvc
+
+to do:
+
+- automatically create cards (working on this)
+- create several different pages
+- search functionality
+- login functionality
+- book submit
+- book update
+
+done:
+
+- create/format cards
+
+future plans:
+
+- switch to react
+- switch to django/flask
+- add an ORM
