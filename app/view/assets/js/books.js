@@ -10,7 +10,7 @@ $(document).ready(() => {
   console.log("ready!");
 
   $.get("/api/allbooks", data => {
-    // console.log(data);
+    console.log(data);
     data.map(item => {
       createNewCard(item);
       // console.log(item);
@@ -36,6 +36,7 @@ const testItem = {
 function createNewCard(item) {
   let newBookCard = $("<div>");
   newBookCard.addClass("bookcard");
+  newBookCard.attr("value", item.bookID);
 
   const temp = item.dateUpdated + " ";
 
@@ -44,9 +45,6 @@ function createNewCard(item) {
   const day = temp.substring(8, 10);
 
   console.log(year, month, day);
-
-  // let time = moment(item.dateUpdated);
-  // console.log(time.format("YYYY MM DD"));
 
   // component creation ///////////////////////////////////////////////
   // create header
@@ -87,17 +85,4 @@ function createNewCard(item) {
 
   // append card to the main content section
   $(".main-content").append(newBookCard);
-
-  // return (
-  //     <div class="bookcard">
-  //
-  //       <div class="bookcard-footer">
-  //         <p>pages read: 17 out of 234</p>
-  //         <p>Date updated: 1/21/2019</p>
-  //         <p>current rating: 4/5</p>
-  //       </div>
-  //     </div>
-  //   );
 }
-
-// createNewCard(testItem);
