@@ -65,25 +65,30 @@
         <button id="test-button">test button</button>
       </div>
       <div class="detail-update">
-        <form>
+        <form id="update-form">
           <div>
             Title:
-            <input type="text" placeholder="Title" id="update-title" />
+            <input type="text" placeholder="Title" id="update-title" required />
           </div>
           <div>
             Author:
-            <input type="text" placeholder="Author" id="update-author" />
+            <input
+              type="text"
+              placeholder="Author"
+              id="update-author"
+              required
+            />
           </div>
           <div>
             Status:
-            <select name="book-status" id="update-status">
+            <select name="book-status" id="update-status" required>
               <option value="to read">To Read</option>
               <option value="reading">Reading</option>
               <option value="finished">Finished</option>
               <option value="dnf">DNF</option>
             </select>
             Rating:
-            <select name="book-rating" id="update-rating">
+            <select name="book-rating" id="update-rating" required>
               <option value="5">5</option>
               <option value="4">4</option>
               <option value="3">3</option>
@@ -93,15 +98,29 @@
           </div>
           <div>
             Review:
-            <textarea placeholder="Review" id="update-review"></textarea>
+            <textarea
+              placeholder="Review"
+              id="update-review"
+              required
+            ></textarea>
           </div>
           <div>
             Pages:
-            <input type="number" placeholder="100" id="update-pages" />
+            <input type="number" placeholder="100" id="update-pages" required />
             Pages read:
-            <input type="number" placeholder="0" id="update-pages-read" />
+            <input
+              type="number"
+              placeholder="0"
+              id="update-pages-read"
+              required
+            />
           </div>
-          <input type="submit" value="Update Info" id="update-button" />
+          <input
+            type="submit"
+            value="Update Info"
+            id="update-button"
+            required
+          />
         </form>
       </div>
     </section>

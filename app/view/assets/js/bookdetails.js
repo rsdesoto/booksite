@@ -21,7 +21,7 @@ $(document).ready(() => {
  * Gets the information entered in the update form and
  * creates the object sent into the database
  */
-$("#update-button").on("click", event => {
+$("#update-form").submit(event => {
   event.preventDefault();
   const updateInfo = {
     title: $("#update-title")
@@ -42,8 +42,11 @@ $("#update-button").on("click", event => {
   console.log(updateInfo);
   $.post("/api/onebook", updateInfo, data => {
     console.log("hi");
+    console.log(data);
+    if (data.changedRows >= 1) {
+      window.location.reload();
+    }
   });
-  //   return false;
 });
 
 /**

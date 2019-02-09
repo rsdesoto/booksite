@@ -62,6 +62,37 @@ module.exports = function(app) {
     console.log("req body", req.body);
     // console.log("req params", req.params);
     // console.log(req);
-    return;
+    //
+    //     `UPDATE books, authors, progress, ratings
+    // SET authors.name = "${req.body.name}",
+    // books.title = "${req.body.title}",
+    // progress.pages = ${req.body.pages},
+    // progress.pagesRead = ${req.body.pagesRead},
+    // ratings.rating = ${req.body.rating},
+    // ratings.review = "${req.body.review}"
+    // WHERE books.id = progress.bookID
+    // AND books.id = ratings.bookID
+    // AND books.authorID = authors.ID
+    // AND books.id = ${req.body.id}
+    // ;`;
+
+    connection.query(
+      `UPDATE books, authors, progress, ratings SET authors.name = "${
+        req.body.name
+      }", books.title = "${req.body.title}", progress.pages = ${
+        req.body.pages
+      }, progress.pagesRead = ${req.body.pagesRead}, ratings.rating = ${
+        req.body.rating
+      }, ratings.review = "${
+        req.body.review
+      }" WHERE books.id = progress.bookID AND books.id = ratings.bookID AND books.authorID = authors.ID AND books.id = ${
+        req.body.id
+      };`,
+      function(err, data) {
+        if (err) throw err;
+        // console.log(data);
+        res.json(data);
+      }
+    );
   });
 };
