@@ -22,4 +22,6 @@ $(document).ready(() => {
 const enterBookDetails = book => {
   console.log(book.name);
   console.log(book.title);
+  $("#jq-detail-title").html(book.title);
+  $("#jq-detail-author").html(book.name);
 };
