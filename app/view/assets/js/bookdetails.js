@@ -12,22 +12,15 @@ $(document).ready(() => {
     console.log(data);
     console.log(data[0]);
     enterBookDetails(data[0]);
-    //   data.map(item => {
-    //     createNewCard(item);
-    //     // console.log(item);
-    //   });
   });
 });
 
+/**
+ * this function updates each of the appropriate areas
+ * of the details page
+ * @param {object} book
+ */
 const enterBookDetails = book => {
-  console.log(book.name);
-  console.log(book.title);
-  console.log(book.bookstatus);
-  console.log(book.rating);
-  console.log(book.review);
-  console.log(book.pages);
-  console.log(book.pagesRead);
-  console.log(book.dateUpdated);
   $("#jq-detail-title").html(book.title);
   $("#jq-detail-author").html(book.name);
   $("#jq-detail-status").html(book.bookstatus);
@@ -39,14 +32,17 @@ const enterBookDetails = book => {
 };
 
 $("#test-button").on("click", () => {
-  console.log("Hello");
-  //   const temp = $("#jq-detail-title")[0].textContent;
-  //   console.log(temp);
-  $("#update-title").val($("#jq-detail-title")[0].textContent);
-  $("#update-author").val($("#jq-detail-author")[0].textContent);
-  $("#update-status").val($("#jq-detail-status")[0].textContent);
-  $("#update-rating").val($("#jq-detail-rating")[0].textContent);
-  $("#update-review").val($("#jq-detail-review")[0].textContent);
-  $("#update-pages").val($("#jq-detail-pages")[0].textContent);
-  $("#update-pages-read").val($("#jq-detail-pages-read")[0].textContent);
+  if ($(".detail-update").css("display") === "none") {
+    $(".detail-update").css("display", "block");
+    console.log("Hello");
+    $("#update-title").val($("#jq-detail-title")[0].textContent);
+    $("#update-author").val($("#jq-detail-author")[0].textContent);
+    $("#update-status").val($("#jq-detail-status")[0].textContent);
+    $("#update-rating").val($("#jq-detail-rating")[0].textContent);
+    $("#update-review").val($("#jq-detail-review")[0].textContent);
+    $("#update-pages").val($("#jq-detail-pages")[0].textContent);
+    $("#update-pages-read").val($("#jq-detail-pages-read")[0].textContent);
+  } else {
+    $(".detail-update").css("display", "none");
+  }
 });
