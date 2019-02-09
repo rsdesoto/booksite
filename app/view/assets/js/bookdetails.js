@@ -1,10 +1,5 @@
 const bookID = window.location.pathname.substring(13);
 
-/**
- * Note from Ry - need to update to make these variables
- * global - want to make sure that the author ID
- * is always set so it's easier to update everything
- */
 let authorID;
 
 /**
@@ -16,7 +11,8 @@ $(document).ready(() => {
 
   $.get(`/api/onebook/${bookID}`, data => {
     // console.log(data);
-    // console.log(data[0]);
+    console.log(data[0]);
+    authorID = data[0].authorID;
     enterBookDetails(data[0]);
   });
 });
@@ -40,7 +36,8 @@ $("#update-button").on("click", event => {
       .val()
       .trim(),
     pagesRead: $("#update-pages-read").val(),
-    pages: $("#update-pages").val()
+    pages: $("#update-pages").val(),
+    id: bookID
   };
   console.log(updateInfo);
   $.post("/api/onebook", updateInfo, data => {
