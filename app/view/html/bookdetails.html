@@ -49,7 +49,8 @@
           <h2>by Jeff VanderMeer</h2>
         </div>
         <div class="detail-status">
-          <h6>Status: finished | Current Rating: 5/5</h6>
+          <h6>Status: finished</h6>
+          <h6>Current Rating: 5/5</h6>
         </div>
         <div class="detail-review">
           <p>
@@ -58,6 +59,49 @@
             into their books, but this was an exception.
           </p>
         </div>
+        <div class="detail-stats">
+          <h6>Pages: 121 out of 333</h6>
+          <h6>Date updated: 2019/01/25</h6>
+        </div>
+      </div>
+      <div class="detail-update">
+        <form>
+          <div>
+            Title:
+            <input type="text" placeholder="Title" id="update-title" />
+          </div>
+          <div>
+            Author:
+            <input type="text" placeholder="Author" id="update-author" />
+          </div>
+          <div>
+            Status:
+            <select name="book-status" id="update-status">
+              <option value="To Read">To Read</option>
+              <option value="Reading">Reading</option>
+              <option value="Finished">Finished</option>
+              <option value="DNF">DNF</option>
+            </select>
+            Rating:
+            <select name="book-rating" id="update-rating">
+              <option value="5">5</option>
+              <option value="4">4</option>
+              <option value="3">3</option>
+              <option value="2">2</option>
+              <option value="1">1</option>
+            </select>
+          </div>
+          <div>
+            Review:
+            <textarea placeholder="Review" id="update-review"></textarea>
+          </div>
+          <div>
+            Pages:
+            <input type="number" placeholder="100" id="update-pages" />
+            Pages read:
+            <input type="number" placeholder="0" id="update-pages-read" />
+          </div>
+        </form>
       </div>
     </section>
     <footer></footer>
