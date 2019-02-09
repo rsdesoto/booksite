@@ -46,11 +46,11 @@
         <div class="detail-header">
           <h1 id="jq-detail-title">Annihilation</h1>
 
-          <h2 id="jq-detail-author">by Jeff VanderMeer</h2>
+          <h2>by <span id="jq-detail-author">Jeff VanderMeer</span></h2>
         </div>
         <div class="detail-status">
-          <h6>Status: finished</h6>
-          <h6>Current Rating: 5/5</h6>
+          <h6>Status: <span id="jq-detail-status">finished</span></h6>
+          <h6>Current Rating: <span id="jq-detail-rating">5</span>/5</h6>
         </div>
         <div class="detail-review">
           <p id="jq-detail-review">
@@ -60,9 +60,15 @@
           </p>
         </div>
         <div class="detail-stats">
-          <h6>Pages: 121 out of 333</h6>
-          <h6>Date updated: 2019/01/25</h6>
+          <h6>
+            Pages: <span id="jq-detail-pages-read">121</span> out of
+            <span id="jq-detail-pages">333</span>
+          </h6>
+          <h6>
+            Date updated: <span id="jq-detail-update-date">2019/01/25</span>
+          </h6>
         </div>
+        <button id="test-button">test button</button>
       </div>
       <div class="detail-update">
         <form>
@@ -77,10 +83,10 @@
           <div>
             Status:
             <select name="book-status" id="update-status">
-              <option value="To Read">To Read</option>
-              <option value="Reading">Reading</option>
-              <option value="Finished">Finished</option>
-              <option value="DNF">DNF</option>
+              <option value="to read">To Read</option>
+              <option value="reading">Reading</option>
+              <option value="finished">Finished</option>
+              <option value="dnf">DNF</option>
             </select>
             Rating:
             <select name="book-rating" id="update-rating">
