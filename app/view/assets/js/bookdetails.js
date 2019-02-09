@@ -44,6 +44,13 @@ $("#update-form").submit(event => {
     console.log("hi");
     console.log(data);
     if (data.changedRows >= 1) {
+      $("#update-title").val("");
+      $("#update-author").val("");
+      $("#update-status").val("to read");
+      $("#update-rating").val("5");
+      $("#update-review").val("");
+      $("#update-pages").val(100);
+      $("#update-pages-read").val(0);
       window.location.reload();
     }
   });
@@ -69,11 +76,10 @@ const enterBookDetails = book => {
  * Hides/unhides the update section and preloads
  * all the information
  */
-$("#test-button").on(
-  "click",
-  () => {
-    //   if ($(".detail-update").css("display") === "none") {
+$("#test-button").on("click", () => {
+  if ($(".detail-update").css("display") === "none") {
     $(".detail-update").css("display", "block");
+
     console.log("Hello");
     $("#update-title").val($("#jq-detail-title")[0].textContent);
     $("#update-author").val($("#jq-detail-author")[0].textContent);
@@ -82,8 +88,7 @@ $("#test-button").on(
     $("#update-review").val($("#jq-detail-review")[0].textContent);
     $("#update-pages").val($("#jq-detail-pages")[0].textContent);
     $("#update-pages-read").val($("#jq-detail-pages-read")[0].textContent);
+  } else {
+    $(".detail-update").css("display", "none");
   }
-  //   else {
-  //     $(".detail-update").css("display", "none");
-  //   }
-);
+});
