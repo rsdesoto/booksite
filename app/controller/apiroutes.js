@@ -4,7 +4,7 @@ module.exports = function(app) {
   app.get("/api/books", function(req, res) {
     connection.query("SELECT * FROM BOOKS", function(err, data) {
       if (err) throw err;
-      console.log(data);
+      // console.log(data);
       res.json(data);
     });
   });
@@ -12,7 +12,7 @@ module.exports = function(app) {
   app.get("/api/authors", function(req, res) {
     connection.query("SELECT * FROM AUTHORS", function(err, data) {
       if (err) throw err;
-      console.log(data);
+      // console.log(data);
       res.json(data);
     });
   });
@@ -20,7 +20,7 @@ module.exports = function(app) {
   app.get("/api/ratings", function(req, res) {
     connection.query("SELECT * FROM RATINGS", function(err, data) {
       if (err) throw err;
-      console.log(data);
+      // console.log(data);
       res.json(data);
     });
   });
@@ -28,7 +28,7 @@ module.exports = function(app) {
   app.get("/api/progress", function(req, res) {
     connection.query("SELECT * FROM PROGRESS", function(err, data) {
       if (err) throw err;
-      console.log(data);
+      // console.log(data);
       res.json(data);
     });
   });
@@ -38,7 +38,7 @@ module.exports = function(app) {
       "SELECT * FROM books LEFT JOIN progress ON books.id = progress.bookID LEFT JOIN ratings ON books.id = ratings.bookID LEFT JOIN authors ON books.authorID = authors.ID;",
       function(err, data) {
         if (err) throw err;
-        console.log(data);
+        // console.log(data);
         res.json(data);
       }
     );
@@ -52,9 +52,16 @@ module.exports = function(app) {
       };`,
       function(err, data) {
         if (err) throw err;
-        console.log(data);
+        // console.log(data);
         res.json(data);
       }
     );
+  });
+
+  app.post("/api/onebook", function(req, res) {
+    console.log("req body", req.body);
+    // console.log("req params", req.params);
+    // console.log(req);
+    return;
   });
 };

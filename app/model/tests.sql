@@ -13,3 +13,8 @@ LEFT JOIN ratings ON books.id = ratings.bookID
 LEFT JOIN authors ON books.authorID = authors.ID 
 WHERE books.id = "1"
 ;
+
+
+UPDATE books
+SET title = "a Tale for the time being"
+WHERE books.id = 1;
