@@ -1,38 +1,6 @@
 var connection = require("./connection.js");
 
 module.exports = function(app) {
-  app.get("/api/books", function(req, res) {
-    connection.query("SELECT * FROM BOOKS", function(err, data) {
-      if (err) throw err;
-      // console.log(data);
-      res.json(data);
-    });
-  });
-
-  app.get("/api/authors", function(req, res) {
-    connection.query("SELECT * FROM AUTHORS", function(err, data) {
-      if (err) throw err;
-      // console.log(data);
-      res.json(data);
-    });
-  });
-
-  app.get("/api/ratings", function(req, res) {
-    connection.query("SELECT * FROM RATINGS", function(err, data) {
-      if (err) throw err;
-      // console.log(data);
-      res.json(data);
-    });
-  });
-
-  app.get("/api/progress", function(req, res) {
-    connection.query("SELECT * FROM PROGRESS", function(err, data) {
-      if (err) throw err;
-      // console.log(data);
-      res.json(data);
-    });
-  });
-
   app.get("/api/allbooks", function(req, res) {
     connection.query(
       "SELECT * FROM books LEFT JOIN progress ON books.id = progress.bookID LEFT JOIN ratings ON books.id = ratings.bookID LEFT JOIN authors ON books.authorID = authors.ID;",
@@ -60,21 +28,6 @@ module.exports = function(app) {
 
   app.post("/api/onebook", function(req, res) {
     console.log("req body", req.body);
-    // console.log("req params", req.params);
-    // console.log(req);
-    //
-    //     `UPDATE books, authors, progress, ratings
-    // SET authors.name = "${req.body.name}",
-    // books.title = "${req.body.title}",
-    // progress.pages = ${req.body.pages},
-    // progress.pagesRead = ${req.body.pagesRead},
-    // ratings.rating = ${req.body.rating},
-    // ratings.review = "${req.body.review}"
-    // WHERE books.id = progress.bookID
-    // AND books.id = ratings.bookID
-    // AND books.authorID = authors.ID
-    // AND books.id = ${req.body.id}
-    // ;`;
 
     connection.query(
       `UPDATE books, authors, progress, ratings SET authors.name = "${
@@ -95,4 +48,71 @@ module.exports = function(app) {
       }
     );
   });
+
+  /**
+   * The New Item area --
+   * author will return authorID, then book -> bookID, then the review and etc can be done
+   */
+  app.post("/api/newauthor", function(req, res) {
+    console.log(req.body);
+    // insertId - gets sent back!!!
+    connection.query(
+      `INSERT INTO authors (name,keywords) VALUES ("${req.body.name}","");`,
+      function(err, data) {
+        if (err) throw err;
+        res.json(data);
+      }
+    );
+  });
+
+  app.post("/api/newbook", function(req, res) {
+    console.log(req.body);
+    // insertId - gets sent back!!!
+    connection.query(
+      `INSERT INTO books (title,authorID) VALUES("${req.body.title}",${
+        req.body.authorId
+      });`,
+      function(err, data) {
+        if (err) throw err;
+        res.json(data);
+      }
+    );
+  });
+
+  app.post("/api/newbook_rating", function(req, res) {
+    console.log(req.body);
+    // insertId - gets sent back!!!
+    connection.query(
+      `INSERT INTO books (title,authorID) VALUES("${req.body.title}",${
+        req.body.authorId
+      });`,
+      function(err, data) {
+        if (err) throw err;
+        res.json(data);
+      }
+    );
+  });
+
+  app.post("/api/newbook_progress", function(req, res) {
+    console.log(req.body);
+    // insertId - gets sent back!!!
+    connection.query(
+      `INSERT INTO books (title,authorID) VALUES("${req.body.title}",${
+        req.body.authorId
+      });`,
+      function(err, data) {
+        if (err) throw err;
+        res.json(data);
+      }
+    );
+  });
 };
+
+//  INSERT INTO books (title,authorID) VALUES("${req.body.title}",2);
+//  INSERT INTO progress (pages,bookstatus,pagesRead,bookId) VALUES (${
+//    req.body.pages
+//  },"${req.body.bookstatus}",${req.body.pagesRead},3);
+//  INSERT INTO ratings (rating,review,bookId) VALUES (${req.body.rating},"${
+//   req.body.review
+// }",${req.body.bookId})
+//  `,

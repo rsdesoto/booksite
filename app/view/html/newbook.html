@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Add A Book</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link
+      rel="stylesheet"
+      href="/assets/css/reset.css"
+      media="screen"
+      title="no title"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/header.css"
+      media="screen"
+      title="no title"
+    />
+    <link
+      rel="stylesheet"
+      href="/assets/css/newbook.css"
+      media="screen"
+      title="no title"
+    />
+    <!-- <script src="main.js"></script> -->
+  </head>
+
+  <body>
+    <header>
+      <div class="header-dropdown"><p>Go To...</p></div>
+      <div class="header-right">
+        <div class="header-search">
+          <form class="header-form">
+            <input type="text" class="header-searchbar" />
+            <button id="header-button">Search</button>
+          </form>
+        </div>
+        <div class="header-login"><p>Login</p></div>
+      </div>
+    </header>
+
+    <section>
+      <div class="new-wrapper">
+        <form id="new-form">
+          <div>
+            Title:
+            <input type="text" placeholder="Title" id="new-title" required />
+          </div>
+          <div>
+            Author:
+            <input type="text" placeholder="Author" id="new-author" required />
+          </div>
+          <div>
+            Status:
+            <select name="book-status" id="new-status" required>
+              <option value="to read">To Read</option>
+              <option value="reading">Reading</option>
+              <option value="finished">Finished</option>
+              <option value="dnf">DNF</option>
+            </select>
+            Rating:
+            <select name="book-rating" id="new-rating" required>
+              <option value="5">5</option>
+              <option value="4">4</option>
+              <option value="3">3</option>
+              <option value="2">2</option>
+              <option value="1">1</option>
+            </select>
+          </div>
+          <div>
+            Review:
+            <textarea placeholder="Review" id="new-review" required></textarea>
+          </div>
+          <div>
+            Pages:
+            <input type="number" placeholder="100" id="new-pages" required />
+            Pages read:
+            <input type="number" placeholder="0" id="new-pages-read" required />
+          </div>
+          <input type="submit" value="Add Book" id="new-button" required />
+        </form>
+      </div>
+    </section>
+    <footer></footer>
+  </body>
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"
+  ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.23.0/moment.js"></script>
+
+  <script src="/assets/js/newbook.js"></script>
+</html>
