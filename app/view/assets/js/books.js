@@ -54,7 +54,9 @@ function createNewCard(item) {
   // create title
   let newBookTitle = $("<div>");
   newBookTitle.addClass("bookcard-title");
-  newBookTitle.html(`<h2>${item.title}</h2>`);
+  newBookTitle.html(
+    `<a href="./bookdetails/${item.bookID}"><h2>${item.title}</h2></a>`
+  );
 
   // create author info
   let newBookInfo = $("<div>");
