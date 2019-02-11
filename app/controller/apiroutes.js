@@ -83,9 +83,9 @@ module.exports = function(app) {
     console.log(req.body);
     // insertId - gets sent back!!!
     connection.query(
-      `INSERT INTO books (title,authorID) VALUES("${req.body.title}",${
-        req.body.authorId
-      });`,
+      `INSERT INTO ratings (rating,review,bookId) VALUES (${req.body.rating},"${
+        req.body.review
+      }",${req.body.bookId});`,
       function(err, data) {
         if (err) throw err;
         res.json(data);
@@ -97,9 +97,9 @@ module.exports = function(app) {
     console.log(req.body);
     // insertId - gets sent back!!!
     connection.query(
-      `INSERT INTO books (title,authorID) VALUES("${req.body.title}",${
-        req.body.authorId
-      });`,
+      `INSERT INTO progress (pages,bookstatus,pagesRead,bookId) VALUES (${
+        req.body.pages
+      },"${req.body.bookstatus}",${req.body.pagesRead},${req.body.bookId});`,
       function(err, data) {
         if (err) throw err;
         res.json(data);
@@ -108,7 +108,6 @@ module.exports = function(app) {
   });
 };
 
-//  INSERT INTO books (title,authorID) VALUES("${req.body.title}",2);
 //  INSERT INTO progress (pages,bookstatus,pagesRead,bookId) VALUES (${
 //    req.body.pages
 //  },"${req.body.bookstatus}",${req.body.pagesRead},3);

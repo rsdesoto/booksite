@@ -1,42 +1,46 @@
 # booksite
 
-thoughts -
+A personal place to log books I have read.
 
-1. heroku app
-2. use a book API to pull cover information
-3. include personal reviews (from me specifically)
-4. chipublib api - is this something i can do?
-5. star ratings
+## How to use
 
-front end:
-html/css
-javascript
-flexbox?
+The user (me) can enter and log new books. Information includes
 
-back end:
-node.js
-express
-heroku
-sequelize?
-passportjs
+- title
+- author
+- status (to read, reading, read, DNF)
+- rating (1-5 out of 5)
+- review
 
-mvc
+## Technologies
 
-to do:
+- html/css
+- jQuery
+- flexbox
 
-- automatically create cards (working on this)
-- create several different pages
-- search functionality
-- login functionality
-- book submit
-- book update
+- node.js
+- express
+- mySQL
+
+## Features to implement
+
+- login/user verification - I want the book information to be available to the public, but updates/adding new information only available to me
+- different views - ideally I would like the book page to be set up so you can see only unread books, or only finished books, or etc
+- author search - only include books by certain authors, etc
+- library API - include a CPL search
+
+## TDL
+
+- author dropdown - some data verification so you can apply books to an existing author?
+- login functionality/login specifics
 
 done:
 
 - create/format cards
+- book submit
+- book update
 
-future plans:
+## Future plans:
 
 - switch to react
 - switch to django/flask
-- add an ORM
