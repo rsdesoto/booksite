@@ -8,10 +8,6 @@ body {
   flex-direction: column;
 }
 
-button {
-  height: 150%;
-}
-
 section {
   padding-top: 0.5rem;
   flex: auto;
@@ -103,11 +99,6 @@ header {
   height: 100%;
   display: flex;
   align-items: center;
-}
-
-#header-button {
-  height: 40px;
-  margin: 0 10px;
 }
 
 .header-searchbar {
