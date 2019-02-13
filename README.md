@@ -33,6 +33,7 @@ The user (me) can enter and log new books. Information includes
 
 - login functionality/login specifics
 - verification (express-verification)
+- set up migration
 
 done:
 
@@ -45,4 +46,5 @@ done:
 ## Future plans:
 
 - switch to react
+  - set up server-side rendering
 - switch to django/flask
