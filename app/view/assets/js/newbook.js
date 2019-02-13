@@ -38,8 +38,14 @@ const createBookInfo = newInfo => {
     });
     $.post("/api/newbook_progress", newInfo, data => {
       console.log(data);
+
+      clearForm();
     });
   });
+};
+
+const clearForm = () => {
+  window.location.replace("./books");
 };
 
 //////////////////////////////////////////////////////////////////////////////////////////
