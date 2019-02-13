@@ -32,7 +32,7 @@ module.exports = function(app) {
   });
 
   /**
-   * Query to select a single book for the book details page
+   * Query to select a single book for the book details page -
    */
   app.get("/api/onebook/:id", function(req, res) {
     console.log(req.params);

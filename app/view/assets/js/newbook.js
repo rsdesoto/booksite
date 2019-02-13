@@ -5,6 +5,7 @@
 /**
  * Create an object from information that is entered in the new book form. This
  * gets passed to the database via API calls.
+ *
  */
 const getBookInfo = () => {
   return {

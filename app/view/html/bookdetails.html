@@ -32,8 +32,8 @@
       <div class="header-dropdown">
         <p class="header-drop-button">Go to...</p>
         <div class="header-drop-content">
-          <a href="books">Book List</a>
-          <a href="newbook">Add Book</a>
+          <a href="../books">Book List</a>
+          <a href="../newbook">Add Book</a>
         </div>
       </div>
       <div class="header-right">
@@ -67,28 +67,51 @@
       <div class="detail-update">
         <form id="update-form">
           <div>
-            Title:
-            <input type="text" placeholder="Title" id="update-title" required />
-          </div>
-          <div>
-            Author:
+            <label for="update-title" class="update-label-block"> Title:</label>
             <input
               type="text"
-              placeholder="Author"
-              id="update-author"
+              placeholder="Title"
+              id="update-title"
+              class="update-field-full"
               required
             />
           </div>
           <div>
-            Status:
-            <select name="book-status" id="update-status" required>
+            <label for="update-author" class="update-label-block">
+              Author:</label
+            >
+            <input
+              type="text"
+              placeholder="Author"
+              id="update-author"
+              class="update-field-full"
+              required
+            />
+          </div>
+          <div>
+            <label for="update-status" class="update-label-block">
+              Status:</label
+            >
+            <select
+              name="book-status"
+              id="update-status"
+              class="update-field-short"
+              required
+            >
               <option value="to read">To Read</option>
               <option value="reading">Reading</option>
               <option value="finished">Finished</option>
               <option value="dnf">DNF</option>
             </select>
-            Rating:
-            <select name="book-rating" id="update-rating" required>
+            <label for="update-rating" class="update-label-block">
+              Rating:</label
+            >
+            <select
+              name="book-rating"
+              id="update-rating"
+              class="update-field-short"
+              required
+            >
               <option value="5">5</option>
               <option value="4">4</option>
               <option value="3">3</option>
@@ -97,7 +120,9 @@
             </select>
           </div>
           <div>
-            Review:
+            <label for="update-review" class="update-label-block"
+              >Review:</label
+            >
             <textarea
               placeholder="Review"
               id="update-review"
@@ -105,13 +130,22 @@
             ></textarea>
           </div>
           <div>
-            Pages:
-            <input type="number" placeholder="100" id="update-pages" required />
-            Pages read:
+            <label for="update-pages" class="update-label-block"> Pages:</label>
+            <input
+              type="number"
+              placeholder="100"
+              id="update-pages"
+              class="update-field-short"
+              required
+            />
+            <label for="update-pages-read" class="update-label-block">
+              Pages read:</label
+            >
             <input
               type="number"
               placeholder="0"
               id="update-pages-read"
+              class="update-field-short"
               required
             />
           </div>

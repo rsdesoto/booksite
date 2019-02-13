@@ -35,10 +35,28 @@
 }
 
 #update-review {
-  width: 300px;
-  height: 300px;
+  width: 80%;
+  height: 200px;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 .detail-update {
   display: none;
+}
+
+.update-label-block {
+  display: block;
+}
+
+.update-field-full {
+  width: 80%;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.update-field-short {
+  width: 30%;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
