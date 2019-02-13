@@ -1,49 +1,31 @@
-.detail-content {
-  width: 50%;
+.new-wrapper {
+  width: 80%;
   margin: 10px;
 }
 
-.detail-header {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
-.detail-status {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  font-size: 12px;
-  margin-bottom: 20px;
-}
-
-.detail-stats {
-  display: flex;
-  width: 100%;
-  justify-content: space-between;
-  font-size: 12px;
-  margin-top: 20px;
-}
-
-/* update form */
-
-.detail-update {
-  width: 50%;
-  margin: 10px;
-}
-
-#update-review {
-  width: 300px;
-  height: 300px;
-}
-
-#test-button {
+#new-review {
+  width: 80%;
   height: 200px;
-  width: 200px;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }
 
 .detail-update {
   display: none;
+}
+
+.new-label-block {
+  display: block;
+}
+
+.new-field-full {
+  width: 80%;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.new-field-short {
+  width: 30%;
+  margin-left: 10px;
+  margin-bottom: 10px;
 }

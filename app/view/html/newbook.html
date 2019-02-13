@@ -45,23 +45,45 @@
       <div class="new-wrapper">
         <form id="new-form">
           <div>
-            Title:
-            <input type="text" placeholder="Title" id="new-title" required />
+            <label for="new-title" class="new-label-block"> Title:</label>
+            <input
+              type="text"
+              placeholder="Title"
+              id="new-title"
+              class="new-field-full"
+              required
+            />
           </div>
           <div>
-            Author:
-            <input type="text" placeholder="Author" id="new-author" required />
+            <label for="new-author" class="new-label-block"> Author:</label>
+            <input
+              type="text"
+              placeholder="Author"
+              id="new-author"
+              class="new-field-full"
+              required
+            />
           </div>
           <div>
-            Status:
-            <select name="book-status" id="new-status" required>
+            <label for="new-status" class="new-label-block"> Status:</label>
+            <select
+              name="book-status"
+              id="new-status"
+              class="new-field-short"
+              required
+            >
               <option value="to read">To Read</option>
               <option value="reading">Reading</option>
               <option value="finished">Finished</option>
               <option value="dnf">DNF</option>
             </select>
-            Rating:
-            <select name="book-rating" id="new-rating" required>
+            <label for="new-rating" class="new-label-block"> Rating:</label>
+            <select
+              name="book-rating"
+              id="new-rating"
+              class="new-field-short"
+              required
+            >
               <option value="5">5</option>
               <option value="4">4</option>
               <option value="3">3</option>
@@ -70,14 +92,28 @@
             </select>
           </div>
           <div>
-            Review:
+            <label for="new-review" class="new-label-block">Review:</label>
             <textarea placeholder="Review" id="new-review" required></textarea>
           </div>
           <div>
-            Pages:
-            <input type="number" placeholder="100" id="new-pages" required />
-            Pages read:
-            <input type="number" placeholder="0" id="new-pages-read" required />
+            <label for="new-pages" class="new-label-block"> Pages:</label>
+            <input
+              type="number"
+              placeholder="100"
+              id="new-pages"
+              class="new-field-short"
+              required
+            />
+            <label for="new-pages-read" class="new-label-block">
+              Pages read:</label
+            >
+            <input
+              type="number"
+              placeholder="0"
+              id="new-pages-read"
+              class="new-field-short"
+              required
+            />
           </div>
           <input type="submit" value="Add Book" id="new-button" required />
         </form>
