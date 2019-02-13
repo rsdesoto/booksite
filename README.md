@@ -32,7 +32,7 @@ The user (me) can enter and log new books. Information includes
 ## TDL
 
 - login functionality/login specifics
-- nav
+- verification (express-verification)
 
 done:
 
@@ -40,6 +40,7 @@ done:
 - book submit
 - book update
 - some data verification so you can apply books to an existing author?
+- nav
 
 ## Future plans:
 
