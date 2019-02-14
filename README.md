@@ -2,15 +2,25 @@
 
 A personal place to log books I have read.
 
+This represents the first iteration of the site -- created using Express.js, mySQL, and jQuery.
+
 ## How to use
 
-The user (me) can enter and log new books. Information includes
+Step 0: make sure you have Node.js and mySQL on your computer!
 
-- title
-- author
-- status (to read, reading, read, DNF)
-- rating (1-5 out of 5)
-- review
+Step 1: clone the repository. Run "npm i" to install all packages.
+
+Step 2: copy the files in "app > migrations > schema.sql" in mySQL to create the necessary tables
+
+Step 3: update "app > controller > connection.js" to reflect your mySQL database settings. Update the port in server.js to reflect your personal port settings.
+
+Step 4: run the server with node or nodemon
+
+Step 5: go to your localhost. Navigate to the "new book" section. Add book information.
+
+Step 6: using the nav bar, go to the "book list" section. Each book you add will be featured here. Click on a title to go to the book details page.
+
+Step 7: as you read, you can update each book item using the "toggle update form" toggle. This provides a pre-populated update form to add information about the book.
 
 ## Technologies
 
